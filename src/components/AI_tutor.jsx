@@ -32,7 +32,7 @@ const AiTutor = () => {
 
     try {
       // Change to the deployed backend 
-      const response = await axios.get(`https://aitutor-1iw2pn91y-vibhanshu-jains-projects-198d7ba8.vercel.app/ask-python/${encodeURIComponent(question)}`); 
+      const response = await axios.get(`https://aitutor-6fz2gbdst-vibhanshu-jains-projects-198d7ba8.vercel.app/ask-python/${encodeURIComponent(question)}`);
       const cleanedAnswer = response.data.answer
         .replace(/\*/g, '')  // Removes the '*' from the response
         .replace(/\n/g, '<br/>');  // Makes newlines into actual line breaks
