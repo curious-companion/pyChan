@@ -10,8 +10,8 @@ const AiTutor = () => {
   const [messages, setMessages] = useState([]);
   const messagesEndRef = useRef(null);
 
-  useEffect(() =>{
-    messagesEndRef.current?.scrollIntoView({behavior: 'smooth'})
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
   const handleSubmit = async (e) => {
@@ -31,7 +31,8 @@ const AiTutor = () => {
     setQuestion('');
 
     try {
-      const response = await axios.get(`http://127.0.0.1:8000/ask-python/${encodeURIComponent(question)}`);
+      // Change to the deployed backend URL
+      const response = await axios.get(`https://aitutor-25rty3q2n-vibhanshu-jains-projects-198d7ba8.vercel.app/ask-python/${encodeURIComponent(question)}`);
       const cleanedAnswer = response.data.answer
         .replace(/\*/g, '')  // Removes the '*' from the response
         .replace(/\n/g, '<br/>');  // Makes newlines into actual line breaks
